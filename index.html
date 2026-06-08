@@ -90,6 +90,7 @@
   h1{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:1.04;letter-spacing:.005em;
     font-size:clamp(2.9rem,8.5vw,6.4rem);max-width:14ch}
   h1 em{font-style:normal;color:var(--amber);position:relative}
+  h1 .kern{margin-left:-0.08em}
   .hero p.lede{max-width:46ch;margin:28px 0 38px;font-size:1.12rem;color:var(--bone-dim)}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap}
   .btn-ghost{border:1px solid var(--line);padding:14px 26px;font-weight:600;transition:border-color .2s,background .2s}
@@ -171,6 +172,8 @@
 
   .areas{display:flex;flex-wrap:wrap;gap:12px}
   .areas span{border:1px solid var(--line);background:var(--ink-2);padding:12px 18px;font-weight:600;font-size:.95rem}
+  .about-body{max-width:64ch;font-size:1.08rem;color:var(--bone-dim)}
+  .about-body p+p{margin-top:18px}
   /* reveal */
   .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .rv.in{opacity:1;transform:none}
@@ -225,6 +228,7 @@
       <a href="#services">Services</a>
       <a href="#work">Recent work</a>
       <a href="#process">How we work</a>
+      <a href="#about">About</a>
       <a href="#areas">Areas</a>
       <a href="#quote">Contact</a>
       <a href="tel:00000000000" class="call-btn">&#9742; 0000 000 000</a>
@@ -268,7 +272,7 @@
   </div>
   <div class="wrap">
     <div class="eyebrow rv"><span class="rule"></span><span class="mono">Groundworks &middot; Foundations &middot; General Build</span></div>
-    <h1 class="rv">Reliable groundwork.<br>Built <em>properly.</em></h1>
+    <h1 class="rv">Reliable groundwork.<br>Built <em>properly<span class="kern">.</span></em></h1>
     <p class="lede rv">Helcon Building Limited is an East Yorkshire based building firm. We take on groundworks, foundations, drainage, extensions and general building work, with clear quotes, tidy sites and straightforward communication from start to finish.</p>
     <div class="cta-row rv">
       <a href="#quote" class="btn-solid">Request a free quote</a>
@@ -333,6 +337,20 @@
     <div class="step rv"><div class="n">02</div><h4>Fixed quote</h4><p>Clear written quote with scope and price, no surprises later.</p></div>
     <div class="step rv"><div class="n">03</div><h4>The work</h4><p>Directly employed crews, our own plant, kept tidy and on programme.</p></div>
     <div class="step rv"><div class="n">04</div><h4>Sign off</h4><p>Handover with Building Control compliance and certificates where needed.</p></div>
+  </div>
+</section>
+
+<section id="about" class="wrap">
+  <div class="sec-head">
+    <h2 class="rv">Who you're<br>dealing with</h2>
+    <p class="rv">Founder-led, with a background in major civil construction.</p>
+  </div>
+  <div class="about-body rv">
+    <p>Helcon Building Limited is run by its founder, Mayo, who comes from a background in heavy civil construction. Before setting up in East Yorkshire, he worked as a leading hand and plant operator on major infrastructure, including oil and gas civil works and the Wambo Wind Farm in Queensland, one of Australia's largest renewable energy projects, where the turbine foundations alone ran to tens of thousands of cubic metres of concrete.</p>
+    <p>That background shapes how your job gets done: time on the machines and leading crews on big sites means ground and foundations to engineering standards, proper setting out and levels, and a clean, methodical site from first dig to final tidy-up. The difference here is you get that directly from the person on the tools, not passed down a chain of subcontractors.</p>
+  </div>
+  <div class="areas" style="margin-top:32px">
+    <span class="rv">Heavy civil construction</span><span class="rv">Oil &amp; gas civils</span><span class="rv">Wind farm groundworks</span><span class="rv">Plant operator</span><span class="rv">Leading hand</span>
   </div>
 </section>
 
