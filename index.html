@@ -19,7 +19,21 @@
   <meta name="twitter:title" content="Helcon Building Limited | Groundworks & Building, East Yorkshire">
   <meta name="twitter:description" content="Footings, foundations, drainage and general building across East Yorkshire.">
   <meta name="twitter:image" content="https://helconbuilding.com/helcon-logo.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Helcon Building Limited","legalName":"Helcon Building Limited","identifier":{"@type":"PropertyValue","name":"Company number","value":"16143527"},"description":"East Yorkshire based groundworks and general building firm: footings, foundations, drainage, extensions and site clearance for homeowners, landlords and developers.","url":"https://helconbuilding.com","image":"https://helconbuilding.com/helcon-logo.png","telephone":"+44-0000-000000","email":"hello@helconbuilding.com","priceRange":"££","address":{"@type":"PostalAddress","addressRegion":"East Yorkshire","addressCountry":"GB"},"areaServed":[{"@type":"City","name":"Hessle"},{"@type":"City","name":"Beverley"},{"@type":"City","name":"Cottingham"},{"@type":"City","name":"Anlaby"},{"@type":"City","name":"Willerby"},{"@type":"City","name":"Brough"},{"@type":"City","name":"Driffield"},{"@type":"City","name":"Pocklington"},{"@type":"City","name":"Goole"},{"@type":"City","name":"Market Weighton"},{"@type":"City","name":"Hornsea"},{"@type":"City","name":"Barton-upon-Humber"},{"@type":"AdministrativeArea","name":"East Yorkshire"},{"@type":"AdministrativeArea","name":"North Lincolnshire"}],"knowsAbout":["Groundworks","Foundations","Drainage","Extensions","General building"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Drainage"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Extensions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General building"}}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Helcon Building Limited","legalName":"Helcon Building Limited","identifier":{"@type":"PropertyValue","name":"Company number","value":"16143527"},"description":"East Yorkshire based groundworks and general building firm: footings, foundations, drainage, extensions and site clearance for homeowners, landlords and developers.","url":"https://helconbuilding.com","image":"https://helconbuilding.com/helcon-logo.png","telephone":"+44-0000-000000","email":"hello@helconbuilding.com","priceRange":"££","address":{"@type":"PostalAddress","addressRegion":"East Yorkshire","addressCountry":"GB"},"areaServed":[{"@type":"City","name":"Hessle"},{"@type":"City","name":"Beverley"},{"@type":"City","name":"Cottingham"},{"@type":"City","name":"Anlaby"},{"@type":"City","name":"Willerby"},{"@type":"City","name":"Brough"},{"@type":"City","name":"Driffield"},{"@type":"City","name":"Pocklington"},{"@type":"City","name":"Goole"},{"@type":"City","name":"Market Weighton"},{"@type":"City","name":"Hornsea"},{"@type":"City","name":"Barton-upon-Humber"},{"@type":"AdministrativeArea","name":"East Yorkshire"},{"@type":"AdministrativeArea","name":"North Lincolnshire"}],"knowsAbout":["Groundworks","Foundations","Drainage","Extensions","General building"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Drainage"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Extensions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General building"}}]}}  (function(){
+    const f=document.getElementById('quoteForm'); if(!f) return;
+    f.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn=f.querySelector('button[type=submit]');
+      btn.disabled=true; btn.textContent='Sending...';
+      try{
+        const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+        const d=await r.json();
+        if(d.success){ f.reset(); btn.textContent='Thanks, we will be in touch'; }
+        else { btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
+      }catch(_){ btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
+    });
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -373,16 +387,20 @@
       <a href="tel:00000000000" class="phone-big">&#9742; 0000 000 000</a>
       <div class="cta-row" style="margin-top:20px"><a href="https://wa.me/44XXXXXXXXXX" class="btn-ghost">WhatsApp us a photo of the job</a></div>
     </div>
-    <form class="rv" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks, we will be in touch'">
+    <form id="quoteForm" class="rv">
+      <input type="hidden" name="access_key" value="6153f8e7-4b56-48a2-8b32-3830cc30badc">
+      <input type="hidden" name="subject" value="New quote request from helconbuilding.com">
+      <input type="hidden" name="from_name" value="Helcon website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="row">
-        <div><label>Name</label><input type="text" placeholder="Your name"></div>
-        <div><label>Phone</label><input type="tel" placeholder="Best number"></div>
+        <div><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div><label>Phone</label><input type="tel" name="phone" placeholder="Best number" required></div>
       </div>
       <div>
         <label>Type of work</label>
-        <select><option>Groundworks</option><option>Foundations</option><option>Drainage</option><option>Hardstanding / driveway</option><option>Extension</option><option>General build</option><option>Developer subcontract</option></select>
+        <select name="type_of_work"><option>Groundworks</option><option>Foundations</option><option>Drainage</option><option>Extension</option><option>General build</option><option>Developer subcontract</option></select>
       </div>
-      <div><label>The job</label><textarea rows="4" placeholder="A line or two about the site and what you need"></textarea></div>
+      <div><label>The job</label><textarea name="message" rows="4" placeholder="A line or two about the site and what you need"></textarea></div>
       <button type="submit">Send enquiry</button>
     </form>
   </div>
