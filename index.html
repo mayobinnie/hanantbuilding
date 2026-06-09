@@ -19,20 +19,7 @@
   <meta name="twitter:title" content="Helcon Building Limited | Groundworks & Building, East Yorkshire">
   <meta name="twitter:description" content="Footings, foundations, drainage and general building across East Yorkshire.">
   <meta name="twitter:image" content="https://helconbuilding.com/helcon-logo.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Helcon Building Limited","legalName":"Helcon Building Limited","identifier":{"@type":"PropertyValue","name":"Company number","value":"16143527"},"description":"East Yorkshire based groundworks and general building firm: footings, foundations, drainage, extensions and site clearance for homeowners, landlords and developers.","url":"https://helconbuilding.com","image":"https://helconbuilding.com/helcon-logo.png","telephone":"+44-0000-000000","email":"hello@helconbuilding.com","priceRange":"££","address":{"@type":"PostalAddress","addressRegion":"East Yorkshire","addressCountry":"GB"},"areaServed":[{"@type":"City","name":"Hessle"},{"@type":"City","name":"Beverley"},{"@type":"City","name":"Cottingham"},{"@type":"City","name":"Anlaby"},{"@type":"City","name":"Willerby"},{"@type":"City","name":"Brough"},{"@type":"City","name":"Driffield"},{"@type":"City","name":"Pocklington"},{"@type":"City","name":"Goole"},{"@type":"City","name":"Market Weighton"},{"@type":"City","name":"Hornsea"},{"@type":"City","name":"Barton-upon-Humber"},{"@type":"AdministrativeArea","name":"East Yorkshire"},{"@type":"AdministrativeArea","name":"North Lincolnshire"}],"knowsAbout":["Groundworks","Foundations","Drainage","Extensions","General building"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Drainage"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Extensions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General building"}}]}}  (function(){
-    const f=document.getElementById('quoteForm'); if(!f) return;
-    f.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const btn=f.querySelector('button[type=submit]');
-      btn.disabled=true; btn.textContent='Sending...';
-      try{
-        const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
-        const d=await r.json();
-        if(d.success){ f.reset(); btn.textContent='Thanks, we will be in touch'; }
-        else { btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
-      }catch(_){ btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
-    });
-  })();
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Helcon Building Limited","legalName":"Helcon Building Limited","identifier":{"@type":"PropertyValue","name":"Company number","value":"16143527"},"description":"East Yorkshire based groundworks and general building firm: footings, foundations, drainage, extensions and site clearance for homeowners, landlords and developers.","url":"https://helconbuilding.com","image":"https://helconbuilding.com/helcon-logo.png","telephone":"+44-0000-000000","email":"hello@helconbuilding.com","priceRange":"££","address":{"@type":"PostalAddress","addressRegion":"East Yorkshire","addressCountry":"GB"},"areaServed":[{"@type":"City","name":"Hessle"},{"@type":"City","name":"Beverley"},{"@type":"City","name":"Cottingham"},{"@type":"City","name":"Anlaby"},{"@type":"City","name":"Willerby"},{"@type":"City","name":"Brough"},{"@type":"City","name":"Driffield"},{"@type":"City","name":"Pocklington"},{"@type":"City","name":"Goole"},{"@type":"City","name":"Market Weighton"},{"@type":"City","name":"Hornsea"},{"@type":"City","name":"Barton-upon-Humber"},{"@type":"AdministrativeArea","name":"East Yorkshire"},{"@type":"AdministrativeArea","name":"North Lincolnshire"}],"knowsAbout":["Groundworks","Foundations","Drainage","Extensions","General building"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundations"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Drainage"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Extensions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General building"}}]}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -443,6 +430,21 @@
     const set=o=>{m.classList.toggle('open',o);b.classList.toggle('open',o);b.setAttribute('aria-expanded',o);};
     b.addEventListener('click',()=>set(!m.classList.contains('open')));
     m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  })();
+
+  (function(){
+    const f=document.getElementById('quoteForm'); if(!f) return;
+    f.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn=f.querySelector('button[type=submit]');
+      btn.disabled=true; btn.textContent='Sending...';
+      try{
+        const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+        const d=await r.json();
+        if(d.success){ f.reset(); btn.textContent='Thanks, we will be in touch'; }
+        else { btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
+      }catch(_){ btn.textContent='Sorry, please call us instead'; btn.disabled=false; }
+    });
   })();
 </script>
 </body>
